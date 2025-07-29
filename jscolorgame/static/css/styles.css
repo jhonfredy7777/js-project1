@@ -1,0 +1,13 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+.welcome{
+    margin: 0;
+    background-color: #7fed11;
+    color: green;
+    text-align: center;
+    border: 2px dashed #09e6da;
+}
