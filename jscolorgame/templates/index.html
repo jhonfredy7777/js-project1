@@ -8,12 +8,46 @@
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 </head>
 <body>
+    <!-- Welcome message -->
     <h1 class="welcome">Welcome. Have fun coloring figures</h1>
     <main>
-        <div class="grid-container">
-            
+        <!-- instructions -->
+        <div class="instructions">
+            <h2>instructions</h2>
+            <p class="">Add figures to the board. Then, drag and drop a color over the desired shape to color it.
+            </p>
+        </div>
+
+        <!-- colors to drag and drop -->
+        <div class="colors-container"></div>
+        <!-- color input to user -->
+        <div class="usercolor-container">
+            <h2>Add another color</h2>
+            <input id="user-color"  type="color">
+            <input id="submit" type="submit" value="add"> 
+        </div>
+        
+
+        <!-- board to paint -->
+        <div class="board-leyend">
+            <h2>board</h2>
+        </div>
+        <div class="board">
+
+        </div>
+        <!-- figures to drag and drop -->
+        <div class="figure-leyend">
+            <h2>Figures</h2>
+            <h3>Choose the shape you wish</h3>
+        </div>
+        
+        <div class="figures-container">
+            <div class="figure-wrapper">
+                <div class="figure"></div>
+                <button class="btn">add</button>
+            </div>
         </div>
     </main>
-</body>
 <script src="{% static 'js/script.js' %}" ></script>
+</body>
 </html>

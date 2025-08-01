@@ -1,4 +1,4 @@
-body{
+body,h2{
     margin: 0;
     padding: 0;
     font-family: sans-serif;
@@ -10,4 +10,141 @@ body{
     color: green;
     text-align: center;
     border: 2px dashed #09e6da;
+    margin-bottom: 30px;
 }
+
+/* ----------- colors section---------------------------------------------- */
+.instructions{
+    width: 50%;
+    margin:auto;
+    padding: 0;
+    border: 3px dotted #fa2c02; ;
+}
+.instructions h2,p{
+    text-align: center;
+}
+.instructions h2{
+    text-decoration: underline;
+    text-transform: uppercase;
+}
+
+.colors-container{
+    background-color: #9d9fa1;
+    min-height: 70px;
+    height: fit-content;
+    margin: 30px;
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    border-radius: 20px;
+    flex-wrap: wrap;
+}
+.colors{
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    margin: 5px;
+    
+}
+.usercolor-container{
+    margin-left:40%;
+    padding:10px;
+    text-align: center;
+    display: inline-flex;
+    gap: 10px;
+    border-radius: 10%;
+    align-items: center;
+    color: green;
+    
+}
+#submit{
+    background-color: lawngreen;
+    border-radius: 5px;
+    padding: 9px;
+    font-size: 18px;
+    text-transform: uppercase;
+    color: white;
+    border: none;
+    
+}
+
+
+/* ---------- colors section ends ------------------------------------------------ */
+
+/* ---------- board section ------------------------------------------------------ */
+.board-leyend{
+    text-align: center;
+    margin: 20px;
+}
+.board-leyend h2{
+    text-decoration: underline;
+    text-transform: uppercase;
+}
+.board{
+    width: 96%;
+    min-height: 60vh;
+    height: fit-content;
+    border: 7px solid #84240c;
+    margin: auto;
+}
+/* ----------- board section ends------------------------------------------------- */
+
+/* ---------- figures section ------------------------------------------------------ */
+
+.figure-leyend{
+    text-align: center;
+    color: green;
+    margin: 30px;
+}
+.figure-leyend h2{
+    color: black;
+    text-decoration: underline;
+    text-transform: uppercase;
+}
+.figures-container{
+    width: 90%;
+    height: fit-content;
+    border: 1.5px solid black;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 50px;
+    padding: 5px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.figure-wrapper{
+    width: 100px;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.figure{
+    width: 50%;
+    height: 50%;
+    border: 2px solid black;
+
+}
+.btn{
+    font-size: 20px;
+    color:white;
+    background-color: #05fa1d;
+    text-transform: capitalize;
+    border: none;
+    border-radius: 4px;
+    padding: 5px;
+}
+/* ----------- figures section ends------------------------------------------------- */
+
+
+
+
+
+
+
+
+
+
+
