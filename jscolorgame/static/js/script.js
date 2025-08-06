@@ -17,6 +17,9 @@ let colors = [
     {color:'#ffff',name:'white'},
 ]
 
+// ------------------ color functionality -----------------------------------
+
+// addcolor function
 const addColor = (color)=>{
     if (!color) {
         console.warn('No color provided.');
@@ -40,6 +43,7 @@ const addColor = (color)=>{
 
 }
 
+// add the array colors to the container
 colors.forEach(color =>{
     addColor(color.color)
 })
@@ -49,14 +53,77 @@ document.addEventListener('DOMContentLoaded', () => {
     const colorInput = document.getElementById('user-color');
     const submitButton = document.getElementById('submit');
 
-    submitButton.addEventListener('click', (e) => {
-        e.preventDefault(); 
+    submitButton.addEventListener('click', () => { 
         const selectedColor = colorInput.value;
-        console.log("Selected custom color:", selectedColor);
         // add user color
         addColor(selectedColor);
     });
 });
+
+// remove colors
+document.addEventListener('DOMContentLoaded', () => {
+    const removeButton = document.getElementById('remove');
+    // remove the last element of the colors container
+    removeButton.addEventListener('click', () => { 
+    const colorsContainer= document.querySelector('.colors-container')
+    const lastchild= colorsContainer.lastElementChild
+    colorsContainer.removeChild(lastchild)
+
+    });
+});
+
+// reset to original colors
+document.addEventListener('DOMContentLoaded', () => {
+    const resetButton = document.getElementById('reset');
+    // reset colors
+    resetButton.addEventListener('click', () => { 
+    const colorsContainer= document.querySelector('.colors-container')
+    colorsContainer.replaceChildren()
+    colors.forEach(color =>{
+    addColor(color.color)
+})
+
+    });
+});
+
+// -----------------------------figures functionality------------------------------
+
+// define shapes
+let figures = [
+    {figure:'square'},
+    {figure:'triangle'},
+    {figure:'circle'},
+    {figure:'oval'},
+    {figure:'rectangle'},
+    {figure:'pentagon'},
+    {figure:'hexagon'},
+    {figure:'heptagon'},
+    {figure:'octagon'},
+    {figure:'star'},
+    {figure:'trapezoid'},
+    {figure:'parallelogram'},
+    {figure:'rhombus'},
+    {figure:'arrow'},
+    {figure:'irregular1'},
+    {figure:'irregular2'},
+    {figure:'irregular3'},
+    {figure:'irregular4'},
+    {figure:'irregular5'},
+    {figure:'irregular6'},
+
+
+
+]
+
+// add shapes
+for (let i = 0; i < figures.length; i++) {
+const figuresContainer= document.querySelector('.figures-container')
+const shapediv= document.createElement('div')
+shapediv.classList.add('shape',figures[i].figure)
+figuresContainer.appendChild(shapediv)
+}
+
+
 
 
 
