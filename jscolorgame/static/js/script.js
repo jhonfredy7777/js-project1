@@ -1,4 +1,5 @@
-console.log("Script loaded trying!");
+console.log( "Script loaded" );
+
 
 // let's add colors to the palette
 
@@ -32,6 +33,7 @@ const addColor = (color)=>{
     // create the color element and shape it with the .colors class
     const colorElement= document.createElement('div');
     colorElement.classList.add('colors')
+    colorElement.setAttribute("draggable",'true')
 
     // add color
     colorElement.style.backgroundColor= color
@@ -119,12 +121,86 @@ let figures = [
 for (let i = 0; i < figures.length; i++) {
 const figuresContainer= document.querySelector('.figures-container')
 const shapediv= document.createElement('div')
-shapediv.classList.add('shape',figures[i].figure)
+shapediv.classList.add('shape',figures[i].figure,'child')
+shapediv.setAttribute("draggable","true")
 figuresContainer.appendChild(shapediv)
 }
 
+// ------------------------------- drag and drop events -----------------------
+const board= document.querySelector('.board')
+const colorContainer= document.querySelector('.colors-container')
+const figureContainer= document.querySelector('.figures-container')
+
+// from figures container to board
+figureContainer.addEventListener("dragstart",(event)=>{
+    event.dataTransfer.setData("classname",event.target.className)
+    console.log("target:",event.target.className)
+
+})
+
+// from colors contaianer to board
+colorContainer.addEventListener("dragstart",(event)=>{
+    event.dataTransfer.setData("color",event.target.style.backgroundColor)
+    console.log("target:",event.target.style.backgroundColor)
+
+})
+
+// drop zone
+board.addEventListener("dragover",(event)=>{
+    event.preventDefault()
+})
+board.addEventListener("drop",(event)=>{
+    if (event.dataTransfer.getData("color")){
+        const color= event.dataTransfer.getData("color")
+        //verify if the target has ::after styles
+        const afterStyle = window.getComputedStyle(event.target, "::after");
+        if (afterStyle.content !== "none"){
+            event.target.style.setProperty("--after-bg", color);
+        }else{
+        event.target.style.backgroundColor=color
+        }
+    }
+
+    if (event.dataTransfer.getData("classname")){
+        const classes= event.dataTransfer.getData("classname").split(' ')
+        drawOnBoard(classes[0],classes[1])
+        
+    }
+    
+    
+})
+
+// add figure from a click
+figureContainer.addEventListener("click",(event)=>{
+    const classes= event.target.className.split(' ')
+    drawOnBoard(classes[0],classes[1])
+
+})
+
+// hover efect on the figures
+const allFigures= document.querySelectorAll('.child')
+
+allFigures.forEach(fig => {
+    fig.addEventListener('mouseover', () => {
+        fig.style.transform = 'scale(1.1)';
+        fig.style.boxShadow = '0 4px 10px rgba(0,0,0,0.3)';
+    });
+
+    fig.addEventListener('mouseout', () => {
+        fig.style.transform = 'scale(1)';
+        fig.style.boxShadow = 'none';
+    });
+});
+
+
+const drawOnBoard = (class1,class2)=>{
+    const divshape= document.createElement('div')
+    divshape.classList.add(class1,class2)
+    const board= document.querySelector('.board')
+    board.appendChild(divshape)
 
 
 
+}
 
 
