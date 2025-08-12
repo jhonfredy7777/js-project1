@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 </head>
 <body>
+    <div class="modal-overlay"></div>
     <!-- Welcome message -->
     <h1 class="welcome">Welcome. Have fun coloring figures</h1>
     <main>
@@ -15,13 +16,11 @@
         <div class="instructions">
             <h2>instructions</h2>
             <p>Add figures to the board by dragging or clicking on them. Then, drag and drop a color over the desired shape to color it.
-                You also can change the color of the board and see the efect.
+                You can also change the color of the board and see the effect.
 
             </p>
         </div>
 
-        <!-- colors to drag and drop -->
-        <div class="colors-container"></div>
         <!-- color input to user -->
         <div class="add-user-color">
             <h2>Add another color</h2>
@@ -29,27 +28,25 @@
             <input id="submit" type="submit" value="add"> 
             <input id="remove" type="submit" value="revome"> 
             <input id="reset" type="submit" value="reset"> 
-
-
         </div>
+
+        <!-- colors to drag and drop -->
+        <div class="colors-container"></div>
         
 
         <!-- board to paint -->
-        <div class="board-leyend">
-            <h2>board</h2>
+        <div class="board-head">
+            <button id="cleanbtn">Clean board</button>
         </div>
-        <div class="board">
-
-        </div>
+        
+        <div class="board"></div>
         <!-- figures to drag and drop -->
         <div class="figure-leyend">
             <h2>Figures</h2>
             <h3>Choose the shape you wish</h3>
         </div>
         
-        <div class="figures-container">
-
-        </div>
+        <div class="figures-container"></div>
     </main>
 <script src="{% static 'js/script.js' %}" ></script>
 </body>
