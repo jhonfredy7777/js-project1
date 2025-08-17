@@ -113,7 +113,6 @@ Click below to watch a short demo of the game:
 
 [![Watch the demo](https://img.youtube.com/vi/0-K7f90AlhY/maxresdefault.jpg)](https://www.youtube.com/watch?v=0-K7f90AlhY)
 
-![DemoGif](demo/demo.gif)
 
 
 
